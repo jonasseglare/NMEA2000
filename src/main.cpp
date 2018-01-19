@@ -1,6 +1,7 @@
 #include <iostream>
 #include <NMEA2000.h>
 #include <inttypes.h>
+#include <sstream>
 
 #define CRASH(x) {std::cerr << "ERROR: " << (x) << std::endl; abort();}
 
@@ -23,12 +24,13 @@ public:
 
 };
 
-int main() {
+int main(int argc, const char** argv) {
   NullNMEA2000 instance;
-
-  while (true) {
+  for (int i = 1; i < argc; i++) {
+    std::stringstream ss;
+    ss << argv[i];
     uint64_t x = 0;
-    std::cin >> x;
+    ss >> x;
     std::cout << instance.isFastPacketPGN(x) << " ";
   }
   return 0;
