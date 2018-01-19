@@ -33,3 +33,18 @@ target_include_directories(nmea2000
   PUBLIC
   ${CMAKE_CURRENT_SOURCE_DIR}
 )
+
+add_library(nmea2000cpp
+        NMEA2000.h
+        NMEA2000.cpp
+        )
+target_link_libraries(nmea2000cpp
+   nmea2000
+   )
+
+add_executable(main
+  main.cpp
+  )
+target_link_libraries(main
+  nmea2000cpp
+  )
