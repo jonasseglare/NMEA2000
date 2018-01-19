@@ -34,7 +34,7 @@ target_include_directories(nmea2000
   ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
-add_library(nmea2000cpp
+add_library(nmea2000all
         NMEA2000.h
         NMEA2000.cpp
         ActisenseReader.cpp			
@@ -43,13 +43,13 @@ add_library(nmea2000cpp
         N2kGroupFunctionDefaultHandlers.cpp	
         TimeUtils.cpp
         )
-target_link_libraries(nmea2000cpp
+target_link_libraries(nmea2000all
    nmea2000
    )
 
-add_executable(main
-  main.cpp
+add_executable(isFastPacket
+  isFastPacket.cpp
   )
-target_link_libraries(main
-  nmea2000cpp
+target_link_libraries(isFastPacket
+  nmea2000all
   )
