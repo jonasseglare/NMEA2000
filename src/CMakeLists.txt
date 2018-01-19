@@ -41,7 +41,7 @@ add_library(nmea2000cpp
         N2kDeviceList.cpp			
         N2kGroupFunction.cpp			
         N2kGroupFunctionDefaultHandlers.cpp	
-        TimeUtils.c
+        TimeUtils.cpp
         )
 target_link_libraries(nmea2000cpp
    nmea2000
