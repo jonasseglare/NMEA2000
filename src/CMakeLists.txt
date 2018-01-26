@@ -37,11 +37,10 @@ target_include_directories(nmea2000
 add_library(nmea2000all
         NMEA2000.h
         NMEA2000.cpp
-        ActisenseReader.cpp			
+        #ActisenseReader.cpp			
         N2kDeviceList.cpp			
         N2kGroupFunction.cpp			
         N2kGroupFunctionDefaultHandlers.cpp	
-        TimeUtils.cpp
         )
 target_link_libraries(nmea2000all
    nmea2000
